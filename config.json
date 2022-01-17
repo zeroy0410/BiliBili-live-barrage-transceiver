@@ -1,0 +1,6 @@
+{
+    "Roomid":"Please input the roomid you want to craw",
+    "Cookie":"Copy your cookie here",
+    "csrf":"Copy your csrf here",
+    "csrf_token":"Copy your csrf_token here"
+}
