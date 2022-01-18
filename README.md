@@ -22,4 +22,4 @@ Now you can receive and send barrages.
 
 Enjoy it!
 
-![screenshot](https://github.com/zeroy0410/BiliBili-live-barrage-transceiver/src/screenshot.png)
+![screenshot](https://github.com/zeroy0410/BiliBili-live-barrage-transceiver/blob/main/src/screenshot.png)
