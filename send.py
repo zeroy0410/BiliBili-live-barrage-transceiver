@@ -1,21 +1,15 @@
 #!/usr/bin/python3
 
 import requests
-import pickle
 import json
-import time
 import platform
 import os
-from inputimeout import inputimeout, TimeoutOccurred
 
 f=open("./config.json")
 conf=f.read()
 f.close()
 cfg=json.loads(conf)
-_hash=[]
 now_env=platform.platform()
-scr=[]
-op='c'
 
 def Send():
     url = "https://api.live.bilibili.com/msg/send"
@@ -55,39 +49,12 @@ def Send():
     else:
     	print(r.text)
 
-def Receive():
-    roomid=cfg['Roomid']
-    url_api='https://api.live.bilibili.com/xlive/web-room/v1/dM/gethistory?roomid={}'.format(roomid)
-    r=requests.get(url_api)
-    dat=json.loads(r.text)
-    for i in range(10):
-        barrage=dat['data']['room'][i]
-        barrage_hash=pickle.dumps(barrage)
-        if barrage_hash in _hash:
-            continue
-        scr.append(barrage['nickname']+': '+barrage['text'])
-        _hash.append(barrage_hash)
-    for i in scr:
-        print(i)
-
 def Clear_Screen():
     if "Windows" in now_env:
         os.system("cls")
     else:
         os.system("clear")
 
+Clear_Screen()
 while 1:
-    Clear_Screen()
-    Receive()
-    op='c'
-    try:
-        op=inputimeout(prompt='>>',timeout=5)
-    except TimeoutOccurred:
-            pass
-    if op=='i':
-        Send()
-        time.sleep(2)
-    elif op=='c':
-        continue
-    else:
-        break
+    Send()
