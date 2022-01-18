@@ -9,6 +9,9 @@ This project needs you to install requests first.
 ```
 pip install requests
 ```
+
+It's needed to full your basic information which can be seen in Browser Dev Tool in `config.json`.
+
 It's recommended to install Tmux for the best experience.
 
 ### Usage
