@@ -1,5 +1,7 @@
 # BiliBili live barrage transceiver
 
+![screenshot](https://github.com/zeroy0410/BiliBili-live-barrage-transceiver/blob/main/src/screenshot.png)
+
 ### Install
 A simple python program for sending and receiving barrage in bilibili live room.
 
@@ -22,4 +24,3 @@ Now you can receive and send barrages.
 
 Enjoy it!
 
-![screenshot](https://github.com/zeroy0410/BiliBili-live-barrage-transceiver/blob/main/src/screenshot.png)
