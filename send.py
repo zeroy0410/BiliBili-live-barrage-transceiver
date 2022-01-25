@@ -11,7 +11,7 @@ f.close()
 cfg=json.loads(conf)
 now_env=platform.platform()
 
-def Send():
+def Send(s):
     url = "https://api.live.bilibili.com/msg/send"
     headers={
         "Host": "api.live.bilibili.com",
@@ -30,7 +30,6 @@ def Send():
         "Accept-Encoding": "gzip, deflate",
         "Accept-Language": "zh-CN,zh;q=0.9"
     }
-    s=input("Please input the barrage you want to send: ")
     data={
         "bubble":"0",
         "msg":s,
@@ -45,16 +44,6 @@ def Send():
     r=requests.post(url,headers=headers,data=data)
     sta=json.loads(r.text)
     if sta['code']==0:
-        print("Sent successfully")
+        return "Sent successfully"
     else:
-    	print(r.text)
-
-def Clear_Screen():
-    if "Windows" in now_env:
-        os.system("cls")
-    else:
-        os.system("clear")
-
-Clear_Screen()
-while 1:
-    Send()
+    	return r.text
