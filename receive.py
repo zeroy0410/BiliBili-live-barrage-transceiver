@@ -22,4 +22,3 @@ def Receive():
         _hash.append(barrage_hash)
         lis.append(barrage['nickname']+': '+barrage['text'])
     return lis
-Receive()

@@ -10,7 +10,11 @@ layout = [
 window=sg.Window("Bilibili弹幕收发程序",layout)
 while True:
     event,values=window.read(timeout=3)
-    window['-OUT-'].update(receive.Receive())
+    try:
+        window['-OUT-'].update(receive.Receive())
+    except:
+        sg.popup('error: ','请先配置好同一目录下的config.json文件')
+        break
     if event in (None,'Exit'):
         break
     if event=='Go':
