@@ -10,3 +10,8 @@ This project needs you to install requests first.
 pip install requests
 pip install PySimpleGUI
 ```
+
+Or
+```shell
+pip install -r requestments.txt
+```
